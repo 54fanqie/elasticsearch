@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 @SpringBootTest
 class EsApiApplicationTests {
 
-    private static final String TABLE_NAME = "seal_log";
+    private static final String TABLE_NAME = "jd_goods";
     @Autowired
     private RestHighLevelClient restHighLevelClient;
     PsSealLog getPsSealLog() {
