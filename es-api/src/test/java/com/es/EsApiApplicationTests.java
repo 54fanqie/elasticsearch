@@ -37,6 +37,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.naming.directory.SearchResult;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -48,18 +49,22 @@ class EsApiApplicationTests {
     @Autowired
     private RestHighLevelClient restHighLevelClient;
     PsSealLog getPsSealLog() {
-        PsSealLog psSealLog = new PsSealLog();
-        psSealLog.setEsId("44010100001100");
-        psSealLog.setSealName("发票测试章");
-        psSealLog.setUserAccount("syinitadmin");
-        psSealLog.setUserName("测试员");
-        psSealLog.setUserId(2L);
-        psSealLog.setDeptName("国脉信安");
-        psSealLog.setDeptId(23L);
-        psSealLog.setBusinessName("pc控件");
-        psSealLog.setBusinessType("1");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = "2021-08-03 10:59:27";
+        Date date = null;
+        try {
+            date = simpleDateFormat.parse(dateStr);
+        }catch (Exception e){
 
-        psSealLog.setSignTime(new Date());
+        }
+
+        PsSealLog psSealLog = new PsSealLog();
+        psSealLog.setActionTime(date);
+        psSealLog.setBusinessType(1);
+        psSealLog.setSealId(9L);
+        psSealLog.setEsId("11010100007955");
+        psSealLog.setSealDeptId(2L);
+        psSealLog.setSealName("1027测试印章14");
 
 
         return psSealLog;
@@ -101,7 +106,7 @@ class EsApiApplicationTests {
 
         //创建请求
         IndexRequest request = new IndexRequest(TABLE_NAME);
-        request.id("3");
+//        request.id("3");
         request.timeout(TimeValue.timeValueSeconds(1));
 
         //将数据放入json

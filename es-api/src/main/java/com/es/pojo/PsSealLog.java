@@ -11,14 +11,29 @@ import java.util.Date;
  **/
 @Data
 public class PsSealLog {
-    private String sealName;
+    private Long id;
+
     private String esId;
-    private Long deptId;
-    private String deptName;
-    private Date signTime;
-    private String businessType;
-    private String businessName;
+
+    private Long sealId;
+
+    private String sealName;
+
     private Long userId;
+
     private String userName;
-    private String userAccount;
+
+    private Long sealDeptId;
+
+    private String sealDeptName;
+
+    private Long userDeptId;
+
+    private String userDeptName;
+
+    private int businessType;
+
+    private int status;
+
+    private Date actionTime;
 }
