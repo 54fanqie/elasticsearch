@@ -36,4 +36,6 @@ public class PsSealLog {
     private int status;
 
     private Date actionTime;
+
+    private int esKey;
 }
