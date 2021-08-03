@@ -1,0 +1,66 @@
+{
+  "order": 0,
+  "version": 60001,
+  "index_patterns": [
+    "sign_logs*"
+  ],
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": 1
+    }
+  },
+  "mappings": {
+    "properties只不过是一个命名空间而已，你也可以取别的名字，比如官方喜欢用tweet"
+    "properties": {
+      "sealId": {
+        "type": "long"
+      },
+      "esId": {
+        "type": "long"
+      },
+      "sealName": {
+        "type": "keyword"
+      },
+      "userId": {
+        "type": "long"
+      },
+      "userName": {
+        "type": "text",
+        "analyzer": "ik_smart"
+      },
+      "sealDeptId": {
+        "type": "long"
+      },
+      "sealDeptName": {
+        "type": "text",
+        "analyzer": "ik_smart"
+      },
+      "userDeptId": {
+        "type": "long"
+      },
+      "userDeptName": {
+        "type": "text",
+        "analyzer": "ik_smart"
+      },
+      "businessType": {
+        "type": "keyword"
+      },
+      "actionTime": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_second"
+      },
+      "actionTimeStamp": {
+        "type": "date"
+      },
+      "esKey": {
+        "type": "long"
+      },
+      "status": {
+        "type": "long"
+      }
+    }
+  },
+  "aliases": {}
+}
+

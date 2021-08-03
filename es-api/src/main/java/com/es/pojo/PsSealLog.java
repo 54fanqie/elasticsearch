@@ -1,5 +1,7 @@
 package com.es.pojo;
 
+
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 import java.util.Date;
@@ -35,7 +37,12 @@ public class PsSealLog {
 
     private int status;
 
+
+
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date actionTime;
 
+
+    private Date actionTimeStamp;
     private int esKey;
 }
