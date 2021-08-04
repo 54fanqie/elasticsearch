@@ -1,0 +1,67 @@
+//"properties只不过是一个命名空间而已，你也可以取别的名字，比如官方喜欢用tweet"   priority优先级
+/**
+#ES 7.12 创建新sign_logs索引模板方式  要使用_index_template而不是_template
+PUT  _index_template/ps_sign_log
+*/
+
+{
+  "priority": 1,
+  "version": 2021,
+  "index_patterns": [
+    "ps_sign_log*"
+  ],
+  "template": {
+    "settings": {
+        "number_of_shards": "5",
+        "number_of_replicas": "1"
+    },
+    "mappings": {
+
+      "properties": {
+        "sealId": {
+          "type": "long"
+        },
+        "esId": {
+          "type": "long"
+        },
+        "sealName": {
+          "type": "keyword"
+        },
+        "userId": {
+          "type": "long"
+        },
+        "userName": {
+          "type": "text",
+          "analyzer": "ik_smart"
+        },
+        "sealDeptId": {
+          "type": "long"
+        },
+        "sealDeptName": {
+          "type": "text",
+          "analyzer": "ik_smart"
+        },
+        "userDeptId": {
+          "type": "long"
+        },
+        "userDeptName": {
+          "type": "text",
+          "analyzer": "ik_smart"
+        },
+        "businessType": {
+          "type": "keyword"
+        },
+        "actionTime": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_second"
+        },
+        "actionTimeStamp": {
+          "type": "date"
+        },
+        "status": {
+          "type": "long"
+        }
+      }
+    }
+  }
+}

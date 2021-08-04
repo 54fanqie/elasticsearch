@@ -19,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -33,7 +32,7 @@ import java.util.Date;
 @SpringBootTest
 public class EsPsSealLogTests {
 
-    private static final String TABLE_NAME = "seal_log";
+    private static final String TABLE_NAME = "ps_seal_log";
     @Autowired
     private RestHighLevelClient restHighLevelClient;
     PsSealLog getPsSealLog() {

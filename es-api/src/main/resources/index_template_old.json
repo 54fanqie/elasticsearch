@@ -1,17 +1,14 @@
 {
   "order": 0,
-  "version": 60001,
+  "version": 2021,
   "index_patterns": [
-    "sign_logs*"
+    "ps_sign_log*"
   ],
   "settings": {
-    "index": {
       "number_of_shards": "5",
-      "number_of_replicas": 1
-    }
+      "number_of_replicas": "1"
   },
   "mappings": {
-    "properties只不过是一个命名空间而已，你也可以取别的名字，比如官方喜欢用tweet"
     "properties": {
       "sealId": {
         "type": "long"
@@ -60,7 +57,5 @@
         "type": "long"
       }
     }
-  },
-  "aliases": {}
+  }
 }
-
