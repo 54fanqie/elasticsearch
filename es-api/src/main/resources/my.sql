@@ -25,7 +25,8 @@ SELECT
     date_format(
             psl.action_time,
             '%Y-%m-%d %H:%i:%S'
-        ) AS actionTime
+        ) AS actionTime,
+    psl.action_time AS actionTimeStamp
 FROM
     (select id,seal_id,user_id,business_type,action_time from ps_seal_log  where id > :sql_last_value ) psl
         LEFT JOIN ps_seal ps ON psl.seal_id = ps.id
